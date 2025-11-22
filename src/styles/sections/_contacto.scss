@@ -1,0 +1,204 @@
+.contacto-section {
+  &__title {
+    color: #4a2c1a;
+    border-bottom: 3px solid #d4a574;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  // Sección de la cita
+  &__quote {
+    background: linear-gradient(135deg, #6b4423 0%, #4a2c1a 100%);
+    color: #f5f0e8;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 3px solid #d4a574;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  &__quote-author {
+    font-size: 1.2rem;
+    color: #d4a574;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  // Tarjeta del equipo
+  &__team-card {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e8 100%);
+    border: 2px solid #d4a574;
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  &__team-title {
+    color: #6b4423;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  &__team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  &__member {
+    text-align: center;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 2px solid #d4a574;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(107, 68, 35, 0.2);
+      border-color: #6b4423;
+    }
+  }
+
+  &__member-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+
+  &__member:hover &__member-icon {
+    transform: scale(1.2);
+  }
+
+  &__member-name {
+    font-weight: bold;
+    color: #6b4423;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  // Mensaje de despedida
+  &__farewell {
+    background: #8b6f47;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    color: #f5f0e8;
+    border: 2px solid #d4a574;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &__farewell-text {
+    font-size: 1.3rem;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+  }
+
+  &__farewell-subtext {
+    font-size: 1.1rem;
+    margin: 0;
+    font-style: italic;
+    color: #d4a574;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .contacto-section {
+    &__title {
+      font-size: 1.6rem;
+    }
+
+    &__quote {
+      padding: 2rem 1.5rem;
+    }
+
+    &__quote-text {
+      font-size: 1.2rem;
+    }
+
+    &__quote-author {
+      font-size: 1rem;
+    }
+
+    &__team-card {
+      padding: 1.5rem;
+    }
+
+    &__team-title {
+      font-size: 1.5rem;
+    }
+
+    &__team-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    &__member {
+      padding: 1.2rem;
+    }
+
+    &__member-icon {
+      font-size: 2rem;
+    }
+
+    &__farewell {
+      padding: 1.5rem;
+    }
+
+    &__farewell-text {
+      font-size: 1.1rem;
+    }
+
+    &__farewell-subtext {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .contacto-section {
+    &__title {
+      font-size: 1.4rem;
+    }
+
+    &__quote {
+      padding: 1.5rem 1rem;
+    }
+
+    &__quote-text {
+      font-size: 1.1rem;
+    }
+
+    &__team-title {
+      font-size: 1.3rem;
+    }
+
+    &__member-name {
+      font-size: 0.9rem;
+    }
+  }
+}

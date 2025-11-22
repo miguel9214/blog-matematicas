@@ -1,0 +1,40 @@
+.footer {
+  background: #4a2c1a;
+  color: #f5f0e8;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 3rem;
+
+  &__content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__copyright {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  &__quote {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.9rem;
+    color: #d4a574;
+    font-style: italic;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 1rem;
+
+    &__copyright {
+      font-size: 0.9rem;
+    }
+
+    &__quote {
+      font-size: 0.8rem;
+    }
+  }
+}

@@ -1,0 +1,268 @@
+// ============================================
+// VARIABLES GLOBALES DEL PROYECTO
+// ============================================
+
+// --------------------------------------------
+// 1. COLORES PRINCIPALES (PALETA AMADERA)
+// --------------------------------------------
+
+// Colores marrones (base amadera)
+$color-brown-dark: #4a2c1a;        // Marrón oscuro principal
+$color-brown-medium: #6b4423;      // Marrón medio
+$color-brown-light: #8b6f47;       // Marrón claro
+
+// Colores dorados/beige
+$color-gold: #d4a574;              // Dorado/oro antiguo
+$color-gold-light: #f5e6d3;        // Dorado claro
+$color-beige: #f5f0e8;             // Beige claro
+$color-beige-light: #fdfbf7;       // Beige muy claro
+$color-cream: #e8dcc4;             // Crema
+
+// Colores de texto
+$color-text-primary: #4a2c1a;      // Texto principal (marrón oscuro)
+$color-text-secondary: #6b4423;    // Texto secundario (marrón medio)
+$color-text-light: #f5f0e8;        // Texto claro (para fondos oscuros)
+
+// Colores de acento
+$color-accent-primary: #d4a574;    // Acento principal (dorado)
+$color-accent-secondary: #c49564;  // Acento secundario (dorado oscuro)
+
+// --------------------------------------------
+// 2. COLORES DE ESTADO
+// --------------------------------------------
+
+$color-success: #5a7a4d;           // Verde amadera
+$color-warning: #c4955f;           // Amarillo/dorado
+$color-error: #8b4a3a;             // Rojo amadera
+$color-info: #7a6b5a;              // Azul grisáceo amadera
+
+// --------------------------------------------
+// 3. GRADIENTES
+// --------------------------------------------
+
+// Gradientes amadera
+$gradient-wood-dark: linear-gradient(135deg, $color-brown-medium 0%, $color-brown-dark 100%);
+$gradient-wood-medium: linear-gradient(135deg, $color-brown-light 0%, $color-brown-medium 100%);
+$gradient-light: linear-gradient(135deg, $color-beige-light 0%, $color-beige 100%);
+$gradient-background: linear-gradient(135deg, $color-beige 0%, $color-cream 100%);
+
+// Gradiente de overlay
+$gradient-overlay: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+
+// --------------------------------------------
+// 4. TIPOGRAFÍA
+// --------------------------------------------
+
+// Fuentes
+$font-primary: 'Georgia', serif;
+$font-secondary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+
+// Tamaños de fuente
+$font-size-base: 1rem;             // 16px
+$font-size-small: 0.875rem;        // 14px
+$font-size-large: 1.125rem;        // 18px
+$font-size-xlarge: 1.25rem;        // 20px
+
+// Tamaños de títulos
+$font-size-h1: 2.5rem;             // 40px
+$font-size-h2: 2rem;               // 32px
+$font-size-h3: 1.75rem;            // 28px
+$font-size-h4: 1.5rem;             // 24px
+$font-size-h5: 1.25rem;            // 20px
+$font-size-h6: 1rem;               // 16px
+
+// Pesos de fuente
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Altura de línea
+$line-height-tight: 1.2;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.8;
+$line-height-loose: 2;
+
+// --------------------------------------------
+// 5. ESPACIADO
+// --------------------------------------------
+
+// Espaciado base (sistema de 8px)
+$spacing-xs: 0.5rem;               // 8px
+$spacing-sm: 1rem;                 // 16px
+$spacing-md: 1.5rem;               // 24px
+$spacing-lg: 2rem;                 // 32px
+$spacing-xl: 3rem;                 // 48px
+$spacing-xxl: 4rem;                // 64px
+
+// Padding de contenedores
+$container-padding-mobile: 1rem;
+$container-padding-tablet: 2rem;
+$container-padding-desktop: 3rem;
+
+// --------------------------------------------
+// 6. BORDES Y RADIOS
+// --------------------------------------------
+
+// Bordes
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+$border-color-light: $color-gold;
+$border-color-medium: $color-brown-light;
+$border-color-dark: $color-brown-medium;
+
+// Border radius
+$border-radius-small: 5px;
+$border-radius-medium: 10px;
+$border-radius-large: 15px;
+$border-radius-xlarge: 20px;
+$border-radius-round: 50%;
+
+// --------------------------------------------
+// 7. SOMBRAS
+// --------------------------------------------
+
+// Box shadows
+$shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 6px 18px rgba(0, 0, 0, 0.15);
+$shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.2);
+$shadow-extra-strong: 0 12px 35px rgba(0, 0, 0, 0.3);
+
+// Text shadow
+$text-shadow-light: 1px 1px 2px rgba(0, 0, 0, 0.3);
+$text-shadow-medium: 2px 2px 4px rgba(0, 0, 0, 0.5);
+$text-shadow-strong: 3px 3px 6px rgba(0, 0, 0, 0.7);
+
+// --------------------------------------------
+// 8. TRANSICIONES Y ANIMACIONES
+// --------------------------------------------
+
+// Duraciones
+$transition-fast: 0.2s;
+$transition-normal: 0.3s;
+$transition-slow: 0.5s;
+$transition-very-slow: 1s;
+
+// Timing functions
+$transition-ease: ease;
+$transition-ease-in: ease-in;
+$transition-ease-out: ease-out;
+$transition-ease-in-out: ease-in-out;
+
+// Transiciones predefinidas
+$transition-all: all $transition-normal $transition-ease;
+$transition-transform: transform $transition-normal $transition-ease;
+$transition-opacity: opacity $transition-normal $transition-ease;
+$transition-color: color $transition-normal $transition-ease;
+
+// --------------------------------------------
+// 9. BREAKPOINTS (RESPONSIVE)
+// --------------------------------------------
+
+$breakpoint-mobile: 576px;         // Móviles
+$breakpoint-tablet: 768px;         // Tablets
+$breakpoint-desktop-small: 991px;  // Escritorio pequeño
+$breakpoint-desktop: 1200px;       // Escritorio
+$breakpoint-desktop-large: 1400px; // Escritorio grande
+
+// --------------------------------------------
+// 10. Z-INDEX
+// --------------------------------------------
+
+$z-index-dropdown: 100;
+$z-index-sticky: 200;
+$z-index-fixed: 300;
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;
+$z-index-popover: 600;
+$z-index-tooltip: 700;
+$z-index-navbar: 1000;
+$z-index-max: 9999;
+
+// --------------------------------------------
+// 11. CONTENEDORES
+// --------------------------------------------
+
+// Anchos máximos
+$container-max-width: 1200px;
+$content-max-width: 900px;
+
+// --------------------------------------------
+// 12. COMPONENTES ESPECÍFICOS
+// --------------------------------------------
+
+// Navbar
+$navbar-height: 70px;
+$navbar-bg: $gradient-wood-dark;
+$navbar-text-color: $color-text-light;
+$navbar-border: $color-gold;
+
+// Header
+$header-bg: $gradient-wood-dark;
+$header-text-color: $color-text-light;
+$header-subtitle-color: $color-gold;
+
+// Footer
+$footer-bg: $color-brown-dark;
+$footer-text-color: $color-text-light;
+$footer-quote-color: $color-gold;
+
+// Cards
+$card-bg: $gradient-light;
+$card-border: $border-width-medium solid $color-gold;
+$card-border-radius: $border-radius-medium;
+$card-shadow: $shadow-soft;
+$card-padding: $spacing-lg;
+
+// Buttons
+$button-padding: 0.8rem 1.5rem;
+$button-border-radius: $border-radius-small;
+$button-bg: $color-gold;
+$button-text-color: $color-brown-dark;
+$button-hover-bg: $color-accent-secondary;
+
+// Links
+$link-color: $color-brown-medium;
+$link-hover-color: $color-brown-dark;
+$link-decoration: none;
+$link-hover-decoration: underline;
+
+// --------------------------------------------
+// 13. EFECTOS ESPECIALES
+// --------------------------------------------
+
+// Opacidades
+$opacity-light: 0.3;
+$opacity-medium: 0.5;
+$opacity-strong: 0.7;
+$opacity-very-strong: 0.9;
+
+// Blur
+$blur-light: 5px;
+$blur-medium: 10px;
+$blur-strong: 20px;
+
+// Scale
+$scale-small: 0.95;
+$scale-normal: 1;
+$scale-large: 1.05;
+$scale-xlarge: 1.1;
+
+// Rotate
+$rotate-small: 5deg;
+$rotate-medium: 15deg;
+$rotate-large: 45deg;
+$rotate-full: 360deg;
+
+// --------------------------------------------
+// 14. ICONOS Y EMOJIS
+// --------------------------------------------
+
+$icon-size-small: 1.5rem;
+$icon-size-medium: 2rem;
+$icon-size-large: 3rem;
+$icon-size-xlarge: 4rem;

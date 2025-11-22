@@ -1,0 +1,138 @@
+.blog-section {
+  &__title {
+    color: #4a2c1a;
+    border-bottom: 3px solid #d4a574;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    color: #d4a574;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  &__image-box {
+    background: #8b6f47;
+    border-radius: 10px;
+    padding: 3rem 2rem;
+    text-align: center;
+    color: #f5f0e8;
+    border: 2px solid #d4a574;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  &__icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+
+    i {
+      display: inline-block;
+    }
+  }
+
+  &__text {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  &__symbols {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__symbol {
+    font-size: 3rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+      color: #d4a574;
+      transform: scale(1.2) rotate(360deg);
+    }
+  }
+}
+
+// Animación flotante para el icono
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .blog-section {
+    &__title {
+      font-size: 1.6rem;
+    }
+
+    &__subtitle {
+      font-size: 1rem;
+    }
+
+    &__image-box {
+      padding: 2rem 1.5rem;
+    }
+
+    &__icon {
+      font-size: 3rem;
+    }
+
+    &__text {
+      font-size: 1.1rem;
+    }
+
+    &__symbol {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-section {
+    &__title {
+      font-size: 1.4rem;
+    }
+
+    &__subtitle {
+      font-size: 0.95rem;
+    }
+
+    &__image-box {
+      padding: 1.5rem 1rem;
+    }
+
+    &__icon {
+      font-size: 2.5rem;
+    }
+
+    &__symbol {
+      font-size: 2rem;
+    }
+  }
+}

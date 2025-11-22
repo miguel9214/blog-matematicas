@@ -1,0 +1,255 @@
+.frases-section {
+  &__title {
+    color: #4a2c1a;
+    border-bottom: 3px solid #d4a574;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  // Tarjetas de frases
+  &__quote {
+    background: linear-gradient(135deg, #6b4423 0%, #4a2c1a 100%);
+    color: #f5f0e8;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: 3px solid #d4a574;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(212, 165, 116, 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    &:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      border-color: #f5f0e8;
+
+      &::before {
+        opacity: 1;
+      }
+    }
+
+    // Variante para Descartes
+    &--descartes:hover {
+      background: linear-gradient(135deg, #7a5530 0%, #5a3a28 100%);
+    }
+
+    // Variante para Newton
+    &--newton:hover {
+      background: linear-gradient(135deg, #8b6f47 0%, #6b4423 100%);
+    }
+  }
+
+  &__quote-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+    display: inline-block;
+  }
+
+  &__quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      top: -1.5rem;
+      left: -1rem;
+      color: rgba(212, 165, 116, 0.3);
+      font-family: Georgia, serif;
+    }
+
+    &::after {
+      content: '"';
+      font-size: 4rem;
+      position: absolute;
+      bottom: -2.5rem;
+      right: -1rem;
+      color: rgba(212, 165, 116, 0.3);
+      font-family: Georgia, serif;
+    }
+  }
+
+  &__quote-author {
+    font-size: 1.2rem;
+    color: #d4a574;
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 0.5px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  &__quote:hover &__quote-author {
+    color: #f5e6d3;
+  }
+
+  // Mensaje inspirador
+  &__message {
+    background: #8b6f47;
+    border-radius: 10px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    color: #f5f0e8;
+    border: 2px solid #d4a574;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: '✨';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      font-size: 1.5rem;
+      opacity: 0.5;
+      animation: sparkle 2s ease-in-out infinite;
+    }
+
+    &::after {
+      content: '✨';
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      opacity: 0.5;
+      animation: sparkle 2s ease-in-out infinite 1s;
+    }
+
+    &:hover {
+      transform: scale(1.03);
+      background: #9d7f57;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &__message-text {
+    font-size: 1.3rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Animaciones
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .frases-section {
+    &__title {
+      font-size: 1.6rem;
+    }
+
+    &__quote {
+      padding: 2rem 1.5rem;
+    }
+
+    &__quote-icon {
+      font-size: 2.5rem;
+    }
+
+    &__quote-text {
+      font-size: 1.2rem;
+
+      &::before,
+      &::after {
+        font-size: 3rem;
+      }
+    }
+
+    &__quote-author {
+      font-size: 1rem;
+    }
+
+    &__message {
+      padding: 2rem 1.5rem;
+    }
+
+    &__message-text {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .frases-section {
+    &__title {
+      font-size: 1.4rem;
+    }
+
+    &__quote {
+      padding: 1.5rem 1rem;
+    }
+
+    &__quote-icon {
+      font-size: 2rem;
+    }
+
+    &__quote-text {
+      font-size: 1.1rem;
+
+      &::before,
+      &::after {
+        font-size: 2.5rem;
+        top: -1rem;
+        bottom: -2rem;
+      }
+    }
+
+    &__quote-author {
+      font-size: 0.95rem;
+    }
+
+    &__message {
+      padding: 1.5rem 1rem;
+    }
+
+    &__message-text {
+      font-size: 1rem;
+    }
+  }
+}

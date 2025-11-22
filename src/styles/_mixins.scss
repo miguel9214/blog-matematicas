@@ -1,0 +1,361 @@
+// ============================================
+// MIXINS REUTILIZABLES PARA EL PROYECTO
+// ============================================
+
+// --------------------------------------------
+// 1. RESPONSIVE BREAKPOINTS
+// --------------------------------------------
+
+// Mixin para media queries responsive
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == 'tablet' {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop-small' {
+    @media (max-width: 991px) {
+      @content;
+    }
+  } @else if $breakpoint == 'desktop' {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Uso: 
+// .elemento {
+//   font-size: 2rem;
+//   @include respond-to('tablet') {
+//     font-size: 1.5rem;
+//   }
+// }
+
+// --------------------------------------------
+// 2. FLEXBOX
+// --------------------------------------------
+
+// Centrar elementos con flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Flexbox personalizado
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// --------------------------------------------
+// 3. TRANSICIONES
+// --------------------------------------------
+
+// Transición suave
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Transición múltiple
+@mixin transition-multiple($transitions...) {
+  transition: $transitions;
+}
+
+// --------------------------------------------
+// 4. SOMBRAS
+// --------------------------------------------
+
+// Sombra suave
+@mixin box-shadow-soft {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+// Sombra media
+@mixin box-shadow-medium {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+// Sombra fuerte
+@mixin box-shadow-strong {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+// Sombra personalizada
+@mixin box-shadow($x: 0, $y: 4px, $blur: 12px, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+// --------------------------------------------
+// 5. GRADIENTES
+// --------------------------------------------
+
+// Gradiente amadera oscuro
+@mixin gradient-wood-dark {
+  background: linear-gradient(135deg, #6b4423 0%, #4a2c1a 100%);
+}
+
+// Gradiente amadera medio
+@mixin gradient-wood-medium {
+  background: linear-gradient(135deg, #8b6f47 0%, #6b4423 100%);
+}
+
+// Gradiente claro
+@mixin gradient-light {
+  background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e8 100%);
+}
+
+// Gradiente personalizado
+@mixin gradient($direction, $color1, $color2) {
+  background: linear-gradient($direction, $color1, $color2);
+}
+
+// --------------------------------------------
+// 6. BORDES
+// --------------------------------------------
+
+// Borde amadera
+@mixin border-wood($width: 2px) {
+  border: $width solid #d4a574;
+}
+
+// Borde redondeado
+@mixin border-radius($radius: 10px) {
+  border-radius: $radius;
+}
+
+// --------------------------------------------
+// 7. TARJETAS (CARDS)
+// --------------------------------------------
+
+// Card básica con estilo amadera
+@mixin card-base {
+  @include gradient-light;
+  @include border-wood(2px);
+  @include border-radius(10px);
+  @include box-shadow-soft;
+  @include transition(all, 0.3s, ease);
+  padding: 2rem;
+  
+  &:hover {
+    transform: translateY(-5px);
+    @include box-shadow-medium;
+  }
+}
+
+// Card con hover personalizado
+@mixin card-hover($transform: translateY(-5px)) {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: $transform;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// --------------------------------------------
+// 8. TIPOGRAFÍA
+// --------------------------------------------
+
+// Título de sección
+@mixin section-title {
+  color: #4a2c1a;
+  border-bottom: 3px solid #d4a574;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+// Texto destacado
+@mixin text-highlight {
+  color: #6b4423;
+  font-weight: 700;
+  background: linear-gradient(120deg, transparent 0%, rgba(212, 165, 116, 0.3) 50%, transparent 100%);
+  padding: 0 0.3rem;
+  border-radius: 3px;
+}
+
+// --------------------------------------------
+// 9. BOTONES
+// --------------------------------------------
+
+// Botón base
+@mixin button-base {
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  @include transition(all, 0.3s, ease);
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Botón amadera
+@mixin button-wood {
+  @include button-base;
+  background: #d4a574;
+  color: #4a2c1a;
+  
+  &:hover {
+    background: #c49564;
+  }
+}
+
+// --------------------------------------------
+// 10. ANIMACIONES
+// --------------------------------------------
+
+// Animación de entrada desde abajo
+@mixin animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Animación de fade in
+@mixin animate-fade-in($duration: 0.5s) {
+  animation: fadeIn $duration ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// --------------------------------------------
+// 11. TRUNCADO DE TEXTO
+// --------------------------------------------
+
+// Truncar texto en una línea
+@mixin truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Truncar texto en múltiples líneas
+@mixin truncate-multiline($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// --------------------------------------------
+// 12. POSICIONAMIENTO
+// --------------------------------------------
+
+// Centrar absolutamente
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Posición absoluta en las esquinas
+@mixin absolute-corner($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  @if $top { top: $top; }
+  @if $right { right: $right; }
+  @if $bottom { bottom: $bottom; }
+  @if $left { left: $left; }
+}
+
+// --------------------------------------------
+// 13. OVERLAY
+// --------------------------------------------
+
+// Overlay oscuro
+@mixin overlay($opacity: 0.5) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, $opacity);
+    z-index: 1;
+  }
+}
+
+// --------------------------------------------
+// 14. SCROLLBAR PERSONALIZADA
+// --------------------------------------------
+
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background: #f5f0e8;
+    border-radius: 4px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #8b6f47;
+    border-radius: 4px;
+    
+    &:hover {
+      background: #6b4423;
+    }
+  }
+}
+
+// --------------------------------------------
+// 15. ASPECT RATIO
+// --------------------------------------------
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+  }
+  
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
