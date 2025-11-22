@@ -225,16 +225,17 @@ em, i {
   margin: 0;
   padding: 0;
 
-  // El main content necesita padding-top para no quedar detrás del navbar fijo
+  // El header y main necesitan padding-top para no quedar detrás del navbar fijo
+  > header,
   > main {
-    padding-top: 80px; // Altura aproximada del navbar
+    padding-top: 70px;
 
     @media (max-width: 768px) {
-      padding-top: 70px; // Menor altura en móviles
+      padding-top: 65px;
     }
 
     @media (max-width: 576px) {
-      padding-top: 65px; // Aún menor en pantallas muy pequeñas
+      padding-top: 60px;
     }
   }
 

@@ -15,9 +15,16 @@ const ContenidoSection = () => {
 
       {/* René Descartes */}
       <div className="contenido-section__bio-card">
-        <h4 className="contenido-section__bio-title">
-          René Descartes (1596)
-        </h4>
+        <div className="contenido-section__bio-header">
+          <img
+            src="/assets/images/matematicos/descartes.jpg"
+            alt="René Descartes - Retrato histórico"
+            className="contenido-section__bio-image"
+          />
+          <h4 className="contenido-section__bio-title">
+            René Descartes (1596)
+          </h4>
+        </div>
         <div className="contenido-section__bio-content">
           <p className="contenido-section__bio-text">
             <strong>Vida y Contexto:</strong> René Descartes nació en Francia en 1596 y vivió en una época donde la ciencia estaba cambiando gracias al Renacimiento. Fue filósofo, matemático y científico.
@@ -33,9 +40,16 @@ const ContenidoSection = () => {
 
       {/* Isaac Newton */}
       <div className="contenido-section__bio-card">
-        <h4 className="contenido-section__bio-title">
-          Isaac Newton (1642)
-        </h4>
+        <div className="contenido-section__bio-header">
+          <img
+            src="/assets/images/matematicos/newton.jpg"
+            alt="Isaac Newton - Retrato histórico"
+            className="contenido-section__bio-image"
+          />
+          <h4 className="contenido-section__bio-title">
+            Isaac Newton (1642)
+          </h4>
+        </div>
         <div className="contenido-section__bio-content">
           <p className="contenido-section__bio-text">
             <strong>Vida:</strong> Isaac Newton nació en Inglaterra en 1642. Fue un científico muy completo: matemático, físico, astrónomo y filósofo natural. Desde joven mostró gran talento para resolver problemas y dedicó su vida a estudiar la naturaleza.

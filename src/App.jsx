@@ -1,10 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import MathHistoryBlog from './components/MathHistoryBlog';
 import './App.css';
 
 function App() {
   return (
-    <MathHistoryBlog />
+    <BrowserRouter>
+      <MathHistoryBlog />
+    </BrowserRouter>
   );
 }
 

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './layout/Navbar';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
@@ -12,36 +13,23 @@ import ContactoSection from './sections/ContactoSection';
 import '../styles/main.scss';
 
 const MathHistoryBlog = () => {
-  const [activeTab, setActiveTab] = useState('home');
-
-  const renderContent = () => {
-    switch(activeTab) {
-      case 'blog':
-        return <BlogSection />;
-      case 'home':
-        return <HomeSection />;
-      case 'objetivo':
-        return <ObjetivoSection />;
-      case 'contenido':
-        return <ContenidoSection />;
-      case 'frases':
-        return <FrasesSection />;
-      case 'importancia':
-        return <ImportanciaSection />;
-      case 'contacto':
-        return <ContactoSection />;
-      default:
-        return <HomeSection />;
-    }
-  };
-
   return (
     <div className="math-history-blog">
-      <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+      <Navbar />
       <Header />
       <main className="container">
         <div className="math-history-blog__content">
-          {renderContent()}
+          <Routes>
+            <Route path="/" element={<Navigate to="/home" replace />} />
+            <Route path="/home" element={<HomeSection />} />
+            <Route path="/blog" element={<BlogSection />} />
+            <Route path="/objetivo" element={<ObjetivoSection />} />
+            <Route path="/contenido" element={<ContenidoSection />} />
+            <Route path="/frases" element={<FrasesSection />} />
+            <Route path="/importancia" element={<ImportanciaSection />} />
+            <Route path="/contacto" element={<ContactoSection />} />
+            <Route path="*" element={<Navigate to="/home" replace />} />
+          </Routes>
         </div>
       </main>
       <Footer />
