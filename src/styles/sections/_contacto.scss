@@ -81,15 +81,22 @@
     }
   }
 
-  &__member-icon {
-    font-size: 2.5rem;
+  &__member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
     display: block;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
+    margin: 0 auto 1rem;
+    border: 3px solid #d4a574;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  &__member:hover &__member-icon {
-    transform: scale(1.2);
+  &__member:hover &__member-photo {
+    transform: scale(1.1);
+    border-color: #6b4423;
+    box-shadow: 0 6px 16px rgba(107, 68, 35, 0.3);
   }
 
   &__member-name {
@@ -161,8 +168,9 @@
       padding: 1.2rem;
     }
 
-    &__member-icon {
-      font-size: 2rem;
+    &__member-photo {
+      width: 100px;
+      height: 100px;
     }
 
     &__farewell {
@@ -195,6 +203,11 @@
 
     &__team-title {
       font-size: 1.3rem;
+    }
+
+    &__member-photo {
+      width: 80px;
+      height: 80px;
     }
 
     &__member-name {
