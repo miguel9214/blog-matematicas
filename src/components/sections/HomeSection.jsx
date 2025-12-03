@@ -97,13 +97,13 @@ const HomeSection = () => {
           </div>
         </div>
 
-        <div className="home-section__visitors online">
+        {/* <div className="home-section__visitors online">
           <div className="visitors-icon">🟢</div>
           <div className="visitors-info">
             <div className="visitors-count">{onlineCount}</div>
             <div className="visitors-label">En Línea</div>
           </div>
-        </div>
+        </div> */}
 
         <div className="home-section__visitors historic">
           <div className="visitors-icon">📊</div>
