@@ -41,6 +41,43 @@
     }
   }
 
+  // Título de sección dentro de las tarjetas
+  &__section-title {
+    color: #6b4423;
+    font-size: 1.6rem;
+    margin: 0 0 1.5rem 0;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #d4a574;
+    padding-bottom: 0.8rem;
+  }
+
+  // Fila de matemáticos (dos imágenes lado a lado)
+  &__mathematicians-row {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  // Contenedor de cada matemático individual
+  &__mathematician {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  // Nombre del matemático debajo de la imagen
+  &__mathematician-name {
+    color: #6b4423;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+  }
+
   &__bio-header {
     display: flex;
     align-items: center;
@@ -147,6 +184,15 @@
     font-weight: bold;
   }
 
+  &__resource-description {
+    color: #4a2c1a;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    text-align: justify;
+    padding: 0.5rem 0;
+  }
+
   &__link {
     color: #6b4423;
     text-decoration: none;
@@ -191,11 +237,23 @@
       padding: 1.5rem;
     }
 
+    &__section-title {
+      font-size: 1.4rem;
+    }
+
+    &__mathematicians-row {
+      gap: 2rem;
+    }
+
     &__bio-title {
       font-size: 1.5rem;
     }
 
     &__bio-text {
+      font-size: 1rem;
+    }
+
+    &__mathematician-name {
       font-size: 1rem;
     }
 
@@ -209,6 +267,10 @@
 
     &__resource-title {
       font-size: 1.1rem;
+    }
+
+    &__resource-description {
+      font-size: 0.95rem;
     }
 
     &__link {
@@ -233,6 +295,15 @@
       padding: 1.2rem;
     }
 
+    &__section-title {
+      font-size: 1.2rem;
+    }
+
+    &__mathematicians-row {
+      gap: 1.5rem;
+      flex-direction: column;
+    }
+
     &__bio-title {
       font-size: 1.3rem;
     }
@@ -242,8 +313,17 @@
       text-align: left;
     }
 
+    &__mathematician-name {
+      font-size: 0.95rem;
+    }
+
     &__resource-card {
       padding: 1rem;
+    }
+
+    &__resource-description {
+      font-size: 0.9rem;
+      text-align: left;
     }
 
     &__link {

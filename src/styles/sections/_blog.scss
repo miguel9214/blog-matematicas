@@ -72,6 +72,128 @@
       transform: scale(1.2) rotate(360deg);
     }
   }
+
+  // Redes Sociales
+  &__social-networks {
+    margin-top: 3rem;
+  }
+
+  &__social-title {
+    color: #6b4423;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  &__social-card {
+    background: #fdfbf7;
+    border: 2px solid #8b6f47;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border-color: #6b4423;
+    }
+  }
+
+  &__social-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #d4a574;
+  }
+
+  &__social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    flex-shrink: 0;
+
+    &.youtube {
+      background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+    }
+
+    &.tiktok {
+      background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    }
+
+    i {
+      display: inline-block;
+    }
+  }
+
+  &__social-info {
+    flex: 1;
+  }
+
+  &__social-name {
+    color: #4a2c1a;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 0 0.3rem 0;
+  }
+
+  &__social-platform {
+    color: #8b6f47;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  &__social-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__social-description,
+  &__social-why {
+    color: #4a2c1a;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+
+    strong {
+      color: #6b4423;
+      font-weight: 700;
+    }
+  }
+
+  &__social-link {
+    color: #6b4423;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.5rem;
+
+    &:hover {
+      color: #4a2c1a;
+      text-decoration: underline;
+      transform: translateX(5px);
+    }
+  }
 }
 
 // Animación flotante para el icono
@@ -110,6 +232,33 @@
     &__symbol {
       font-size: 2.5rem;
     }
+
+    &__social-title {
+      font-size: 1.4rem;
+    }
+
+    &__social-card {
+      padding: 1.2rem;
+    }
+
+    &__social-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 1.5rem;
+    }
+
+    &__social-name {
+      font-size: 1.2rem;
+    }
+
+    &__social-description,
+    &__social-why {
+      font-size: 0.95rem;
+    }
+
+    &__social-link {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -133,6 +282,43 @@
 
     &__symbol {
       font-size: 2rem;
+    }
+
+    &__social-title {
+      font-size: 1.2rem;
+    }
+
+    &__social-card {
+      padding: 1rem;
+    }
+
+    &__social-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 0.8rem;
+    }
+
+    &__social-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 1.3rem;
+    }
+
+    &__social-name {
+      font-size: 1.1rem;
+    }
+
+    &__social-platform {
+      font-size: 0.85rem;
+    }
+
+    &__social-description,
+    &__social-why {
+      font-size: 0.9rem;
+    }
+
+    &__social-link {
+      font-size: 0.95rem;
     }
   }
 }
