@@ -3,7 +3,8 @@ import '../../styles/sections/_home.scss';
 
 const HomeSection = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [visitorCount, setVisitorCount] = useState(0);
+  const [historicCount, setHistoricCount] = useState(0);
+  const [onlineCount, setOnlineCount] = useState(0);
 
   useEffect(() => {
     // Actualizar reloj cada segundo
@@ -11,13 +12,56 @@ const HomeSection = () => {
       setCurrentTime(new Date());
     }, 1000);
 
-    // Cargar y actualizar contador de visitantes
+    // Generar ID único de sesión para este visitante
+    const sessionId = Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+
+    // Cargar y actualizar contador histórico de visitantes
     const count = localStorage.getItem('visitorCount');
     const newCount = count ? parseInt(count) + 1 : 1;
     localStorage.setItem('visitorCount', newCount.toString());
-    setVisitorCount(newCount);
+    setHistoricCount(newCount);
 
-    return () => clearInterval(timer);
+    // Gestionar visitantes en línea usando sessionStorage
+    const updateOnlineVisitors = () => {
+      const now = Date.now();
+      const onlineTimeout = 60000; // 60 segundos de inactividad
+
+      // Obtener lista de visitantes activos
+      let activeVisitors = JSON.parse(localStorage.getItem('activeVisitors') || '{}');
+
+      // Limpiar visitantes inactivos (más de 60 segundos sin actualizar)
+      Object.keys(activeVisitors).forEach(id => {
+        if (now - activeVisitors[id] > onlineTimeout) {
+          delete activeVisitors[id];
+        }
+      });
+
+      // Agregar o actualizar este visitante
+      activeVisitors[sessionId] = now;
+
+      // Guardar en localStorage
+      localStorage.setItem('activeVisitors', JSON.stringify(activeVisitors));
+
+      // Actualizar contador
+      setOnlineCount(Object.keys(activeVisitors).length);
+    };
+
+    // Actualizar inmediatamente
+    updateOnlineVisitors();
+
+    // Actualizar cada 10 segundos
+    const onlineTimer = setInterval(updateOnlineVisitors, 10000);
+
+    // Limpiar al desmontar
+    return () => {
+      clearInterval(timer);
+      clearInterval(onlineTimer);
+
+      // Remover este visitante de la lista activa
+      let activeVisitors = JSON.parse(localStorage.getItem('activeVisitors') || '{}');
+      delete activeVisitors[sessionId];
+      localStorage.setItem('activeVisitors', JSON.stringify(activeVisitors));
+    };
   }, []);
 
   const formatTime = (date) => {
@@ -43,7 +87,7 @@ const HomeSection = () => {
         Bienvenida
       </h2>
 
-      {/* Reloj y Contador de Visitantes */}
+      {/* Reloj y Contadores de Visitantes */}
       <div className="home-section__stats">
         <div className="home-section__clock">
           <div className="clock-icon">🕐</div>
@@ -52,11 +96,20 @@ const HomeSection = () => {
             <div className="clock-date">{formatDate(currentTime)}</div>
           </div>
         </div>
-        <div className="home-section__visitors">
-          <div className="visitors-icon">👥</div>
+
+        <div className="home-section__visitors online">
+          <div className="visitors-icon">🟢</div>
           <div className="visitors-info">
-            <div className="visitors-count">{visitorCount}</div>
-            <div className="visitors-label">Visitantes</div>
+            <div className="visitors-count">{onlineCount}</div>
+            <div className="visitors-label">En Línea</div>
+          </div>
+        </div>
+
+        <div className="home-section__visitors historic">
+          <div className="visitors-icon">📊</div>
+          <div className="visitors-info">
+            <div className="visitors-count">{historicCount}</div>
+            <div className="visitors-label">Visitas Totales</div>
           </div>
         </div>
       </div>

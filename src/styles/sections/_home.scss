@@ -60,7 +60,6 @@
   }
 
   &__visitors {
-    background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
     border-radius: 15px;
     padding: 1.5rem 2rem;
     display: flex;
@@ -69,20 +68,41 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
     flex: 1;
-    min-width: 280px;
+    min-width: 220px;
 
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
     }
 
-    .visitors-icon {
-      font-size: 3rem;
-      animation: bounce 2s ease-in-out infinite;
+    // Visitantes en línea (verde)
+    &.online {
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+
+      .visitors-info {
+        color: #ffffff;
+      }
+
+      .visitors-icon {
+        animation: pulse-green 2s ease-in-out infinite;
+      }
     }
 
-    .visitors-info {
-      color: #4a2c1a;
+    // Visitantes históricos (azul)
+    &.historic {
+      background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+
+      .visitors-info {
+        color: #4a2c1a;
+      }
+
+      .visitors-icon {
+        animation: bounce 2s ease-in-out infinite;
+      }
+    }
+
+    .visitors-icon {
+      font-size: 3rem;
     }
 
     .visitors-count {
@@ -261,6 +281,17 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-green {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.8;
   }
 }
 
